@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="EquipoLaboratorio" Class="EquipoLaboratorioDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\EquipoLaboratorio.mdf;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="EquipoLaboratorioConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Categoria" Member="Categorias">
+    <Type Name="Categoria">
+      <Column Name="Id_Categoria" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NombreCategoria" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Comentarios" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="FechaInicio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FechaModificacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Categoria_RelacionEquipo_Cat_Lab" Member="RelacionEquipo_Cat_Labs" ThisKey="Id_Categoria" OtherKey="Id_Categoria" Type="RelacionEquipo_Cat_Lab" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Equipo" Member="Equipos">
+    <Type Name="Equipo">
+      <Column Name="Id_Equipo" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NombreEquipo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Modelo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Categoria" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Laboratorio" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Comentarios" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="FechaInicio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FechaModificacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Equipo_RelacionEquipo_Cat_Lab" Member="RelacionEquipo_Cat_Labs" ThisKey="Id_Equipo" OtherKey="Id_Equipo" Type="RelacionEquipo_Cat_Lab" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Laboratorios" Member="Laboratorios">
+    <Type Name="Laboratorio">
+      <Column Name="Id_Laboratorios" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NombreLaboratorio" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Salon" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FechaInicio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FechaModificacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Laboratorio_RelacionEquipo_Cat_Lab" Member="RelacionEquipo_Cat_Labs" ThisKey="Id_Laboratorios" OtherKey="Id_Laboratorios" Type="RelacionEquipo_Cat_Lab" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RelacionEquipo_Cat_Lab" Member="RelacionEquipo_Cat_Labs">
+    <Type Name="RelacionEquipo_Cat_Lab">
+      <Column Name="Id_Relacion" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_Categoria" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Id_Equipo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Id_Laboratorios" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FechaInicio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FechaModificacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Categoria_RelacionEquipo_Cat_Lab" Member="Categoria" ThisKey="Id_Categoria" OtherKey="Id_Categoria" Type="Categoria" IsForeignKey="true" />
+      <Association Name="Equipo_RelacionEquipo_Cat_Lab" Member="Equipo" ThisKey="Id_Equipo" OtherKey="Id_Equipo" Type="Equipo" IsForeignKey="true" />
+      <Association Name="Laboratorio_RelacionEquipo_Cat_Lab" Member="Laboratorio" ThisKey="Id_Laboratorios" OtherKey="Id_Laboratorios" Type="Laboratorio" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

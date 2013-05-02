@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="EquipoLaboratorio">
+  <DataContextMoniker Name="/EquipoLaboratorioDataContext" />
+  <nestedChildShapes>
+    <classShape Id="6940bcee-2ae7-4818-9381-d39d05ad0fa5" absoluteBounds="4.625, 0.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/EquipoLaboratorioDataContext/Categoria" />
+      <nestedChildShapes>
+        <elementListCompartment Id="28397a47-3391-453a-a5ca-f8fe3e7c81b1" absoluteBounds="4.64, 0.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fe95d6b4-2d17-4a21-995e-f59f113fe3f1" absoluteBounds="8.25, 5.5, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/EquipoLaboratorioDataContext/Equipo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5fc2b9a1-f07f-43bd-a59b-ce166a004941" absoluteBounds="8.265, 5.96, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="baa61ad7-9895-47c1-a317-a680e2a1a09c" absoluteBounds="2.75, 3.375, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/EquipoLaboratorioDataContext/Laboratorio" />
+      <nestedChildShapes>
+        <elementListCompartment Id="71195551-9dd5-4b83-8a7b-7b736aeae65f" absoluteBounds="2.765, 3.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2af44575-c5c7-4fb7-88db-aa1ca70796bd" absoluteBounds="8.125, 2.375, 2, 1.9631982421875">
+      <DataClassMoniker Name="/EquipoLaboratorioDataContext/RelacionEquipo_Cat_Lab" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2159e094-f54b-4836-80bb-efd8ca4d9ed5" absoluteBounds="8.14, 2.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.625 : 1.38544840494792); (9.125 : 1.38544840494792); (9.125 : 2.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/EquipoLaboratorioDataContext/Categoria/Categoria_RelacionEquipo_Cat_Lab" />
+      <nodes>
+        <classShapeMoniker Id="6940bcee-2ae7-4818-9381-d39d05ad0fa5" />
+        <classShapeMoniker Id="2af44575-c5c7-4fb7-88db-aa1ca70796bd" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(9.1875 : 5.5); (9.1875 : 4.3381982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/EquipoLaboratorioDataContext/Equipo/Equipo_RelacionEquipo_Cat_Lab" />
+      <nodes>
+        <classShapeMoniker Id="fe95d6b4-2d17-4a21-995e-f59f113fe3f1" />
+        <classShapeMoniker Id="2af44575-c5c7-4fb7-88db-aa1ca70796bd" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.75 : 3.85659912109375); (8.125 : 3.85659912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/EquipoLaboratorioDataContext/Laboratorio/Laboratorio_RelacionEquipo_Cat_Lab" />
+      <nodes>
+        <classShapeMoniker Id="baa61ad7-9895-47c1-a317-a680e2a1a09c" />
+        <classShapeMoniker Id="2af44575-c5c7-4fb7-88db-aa1ca70796bd" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
